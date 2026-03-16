@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Match</title>
+
+<style>
+
+body{
+background:#020617;
+font-family:Arial;
+color:white;
+text-align:center;
+}
+
+h1{
+margin-top:40px;
+}
+
+.scoreboard{
+display:flex;
+justify-content:center;
+gap:40px;
+margin:30px;
+}
+
+.card{
+background:#111827;
+padding:20px;
+border-radius:10px;
+width:180px;
+box-shadow:0 0 15px rgba(0,0,0,0.4);
+}
+
+.card h2{
+margin:10px 0;
+}
+
+.target{
+margin-top:20px;
+font-size:22px;
+color:#22c55e;
+}
+
+.playbox{
+margin-top:30px;
+}
+
+input{
+padding:12px;
+font-size:18px;
+width:100px;
+text-align:center;
+border-radius:6px;
+border:none;
+}
+
+button{
+padding:12px 30px;
+font-size:18px;
+border:none;
+border-radius:6px;
+background:#22c55e;
+color:white;
+margin-left:10px;
+cursor:pointer;
+}
+
+button:hover{
+background:#16a34a;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🏏 Hand Cricket Match</h1>
+
+<div class="scoreboard">
+
+<div class="card">
+<h3>PLAYER</h3>
+<h2>{{p}}</h2>
+</div>
+
+<div class="card">
+<h3>COMPUTER</h3>
+<h2>{{c}}</h2>
+</div>
+
+</div>
+
+{% if target %}
+<div class="target">
+🎯 Target : {{target}}
+</div>
+{% endif %}
+
+<div class="playbox">
+
+<form action="/play" method="POST">
+
+<input type="number" name="run" min="1" max="10" required>
+
+<button>Play Ball</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

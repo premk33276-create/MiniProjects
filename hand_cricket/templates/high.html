@@ -1,0 +1,61 @@
+<title>Highest Score</title>
+<a href="/">Home</a>
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background-color:#f2f2f2;
+    text-align:center;
+}
+
+h2{
+    color:#333;
+}
+
+table{
+    margin:auto;
+    border-collapse:collapse;
+    width:60%;
+    background:white;
+}
+
+th{
+    background:#4CAF50;
+    color:white;
+    padding:10px;
+}
+
+td{
+    padding:10px;
+    border:1px solid #ddd;
+}
+
+tr:nth-child(even){
+    background:#f2f2f2;
+}
+
+tr:hover{
+    background:#ddd;
+}
+</STYLE>
+
+<h2>Highest Player Score: {{top}}</h2>
+
+<h2>Last 10 Games</h2>
+
+<table border="1">
+<tr>
+<th>Player</th>
+<th>Computer</th>
+<th>Winner</th>
+</tr>
+
+{% for g in data %}
+<tr>
+<td>{{g[0]}}</td>
+<td>{{g[1]}}</td>
+<td>{{g[2]}}</td>
+</tr>
+{% endfor %}
+
+</table>

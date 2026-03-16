@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hand Cricket</title>
+<body>
+
+<button style="padding:8px 15px;font-size:16px;"
+onclick="window.location.href='/highest'">
+🏆 Highest Score
+</button>
+
+<h1>Hand Cricket Game</h1>
+
+</body>
+
+<style>
+
+body{
+background:linear-gradient(135deg,#0f172a,#1e293b);
+font-family:Arial;
+color:white;
+text-align:center;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.container{
+background:#111827;
+padding:40px;
+border-radius:12px;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+width:350px;
+}
+
+h1{
+margin-bottom:20px;
+}
+
+button{
+padding:12px 30px;
+font-size:18px;
+border:none;
+border-radius:8px;
+margin:10px;
+cursor:pointer;
+background:#22c55e;
+color:white;
+transition:0.3s;
+}
+
+button:hover{
+background:#16a34a;
+transform:scale(1.05);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🏏 Hand Cricket</h1>
+<h2>Choose Toss</h2>
+
+<form action="/toss" method="POST">
+<button name="toss" value="H">🪙 Head</button>
+<button name="toss" value="T">🪙 Tail</button>
+</form>
+
+</div>
+
+</body>
+</html>

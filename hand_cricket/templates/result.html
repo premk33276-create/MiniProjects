@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Result</title>
+
+<style>
+
+body{
+background:#020617;
+color:white;
+font-family:Arial;
+text-align:center;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+background:#111827;
+padding:40px;
+border-radius:10px;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+h1{
+color:#22c55e;
+}
+
+a{
+display:inline-block;
+margin-top:20px;
+padding:12px 30px;
+background:#22c55e;
+color:white;
+text-decoration:none;
+border-radius:6px;
+}
+
+a:hover{
+background:#16a34a;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>{{winner}}</h1>
+
+<h2>Player Score : {{p}}</h2>
+<h2>Computer Score : {{c}}</h2>
+
+<a href="/">🔄 Play Again</a>
+
+</div>
+
+</body>
+</html>

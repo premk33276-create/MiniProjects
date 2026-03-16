@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Choose</title>
+
+<style>
+
+body{
+background:#0f172a;
+font-family:Arial;
+color:white;
+text-align:center;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+background:#111827;
+padding:40px;
+border-radius:10px;
+width:350px;
+box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+button{
+padding:14px 30px;
+font-size:18px;
+border:none;
+border-radius:8px;
+margin:10px;
+cursor:pointer;
+}
+
+.bat{
+background:#22c55e;
+color:white;
+}
+
+.bowl{
+background:#3b82f6;
+color:white;
+}
+
+button:hover{
+opacity:0.8;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🎉 You Won the Toss!</h2>
+<h3>Choose Your Option</h3>
+
+<form action="/choose" method="POST">
+
+<button class="bat" name="choice" value="bat">🏏 Bat</button>
+<button class="bowl" name="choice" value="bowl">🤾 Bowl</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
