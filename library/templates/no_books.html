@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>No Books Available</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='library.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Sorry!</h2>
+    <p>No copies of this book are available right now.</p>
+    <a href="{{ url_for('books') }}">Back to Books</a>
+</div>
+</body>
+</html>

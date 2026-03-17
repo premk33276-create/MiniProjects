@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <h2 class="text-center">🔍 Search Results</h2>
+
+    {% if data %}
+    <table class="table table-bordered table-hover mt-4">
+        <tr class="table-dark">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Action</th>
+        </tr>
+
+        {% for b in data %}
+        <tr>
+            <td>{{ b[0] }}</td>
+            <td>{{ b[1] }}</td>
+            <td>{{ b[2] }}</td>
+            <td>{{ b[3] }}</td>
+            <td>
+                {% if b[4] == 0 %}
+                    <span class="text-danger">Out of Stock</span>
+                {% else %}
+                    {{ b[4] }}
+                {% endif %}
+            </td>
+
+            <td>
+                <form action="/borrow" method="POST">
+                    <input type="hidden" name="b_id" value="{{ b[0] }}">
+
+                    <input type="date" name="date" required class="form-control mb-1">
+
+                    {% if b[4] == 0 %}
+                        <button class="btn btn-danger btn-sm w-100" disabled>
+                            ❌ Not Available
+                        </button>
+                    {% else %}
+                        <button class="btn btn-success btn-sm w-100">
+                            📥 Borrow
+                        </button>
+                    {% endif %}
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% else %}
+        <div class="alert alert-danger text-center mt-4">
+            ❌ No books found
+        </div>
+    {% endif %}
+
+    <div class="text-center mt-3">
+        <a href="/books.html" class="btn btn-secondary">⬅ Back</a>
+    </div>
+
+</div>
+
+</body>
+</html>
